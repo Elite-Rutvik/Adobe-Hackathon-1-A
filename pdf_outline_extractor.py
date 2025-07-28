@@ -598,9 +598,9 @@ class ImprovedPDFOutlineExtractor:
 
 def process_pdfs():
     """Process all PDFs in input directory and generate JSON outputs"""
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    input_dir = os.path.join(script_dir, "input")
-    output_dir = os.path.join(script_dir, "output")
+    # Use absolute paths for Docker container
+    input_dir = "/app/input"
+    output_dir = "/app/output"
     
     os.makedirs(output_dir, exist_ok=True)
     extractor = ImprovedPDFOutlineExtractor()
